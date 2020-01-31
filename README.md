@@ -1,2 +1,3 @@
-# YOUR PROJECT NAME
-Your project description.
+# PALPATINE 2020  
+
+A faux political campaign site for Emperor Palpatine! (From Star Wars)
