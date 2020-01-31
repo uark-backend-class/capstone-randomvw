@@ -1,0 +1,32 @@
+{
+  "name": "palpatine-2020",
+  "version": "1.0.0",
+  "description": "A faux political campaign site for Emperor Palpatine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uark-backend-class/capstone-randomvw.git"
+  },
+  "author": "Caleb Van Wyhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uark-backend-class/capstone-randomvw/issues"
+  },
+  "homepage": "https://github.com/uark-backend-class/capstone-randomvw#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "handlebars": "^4.7.2",
+    "passport": "^0.4.1",
+    "passport-github2": "^0.1.11",
+    "passport-local-sequelize": "^0.9.0",
+    "pg": "^7.18.1",
+    "sequelize": "^5.21.3"
+  }
+}
