@@ -1,0 +1,7 @@
+<form action="/update" method="POST">
+  <label for="productName">Product Name</label>
+    <input type="text" id="productName" name="productName" value="{{ product.name }}">
+    <input type="hidden" name="id" value="{{ product.id }}">
+    <br>
+  <button type="submit">Submit</button>
+</form>
