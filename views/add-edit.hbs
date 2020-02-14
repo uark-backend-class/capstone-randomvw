@@ -1,7 +1,20 @@
-<form action="/update" method="POST">
-  <label for="productName">Product Name</label>
-    <input type="text" id="productName" name="productName" value="{{ product.name }}">
+<form action="/updateProduct" method="POST">
+  <div>
+    <label for="productName">Product name</label>
+      <input type="text" id="productName" name="productName" value="{{ product.productName }}"><br>
+    <label for="description">Product description</label>
+      <input type="text" id="description" name="description" value="{{ product.description }}"><br>
+    <label for="categoryId">Product categoryId</label>  
+      <input type="text" id="categoryId" name="categoryId" value="{{ product.categoryId }}"><br>
+      <p>0 = DONATION, 1 = HAT, 2 = SHIRT, 3 = SIGN, 4 = STICKER 5 = BUTTONS</p>
+    <label for="size">Product size</label>  
+      <input type="text" id="size" name="size" value="{{ product.size }}"><br>
+    <label for="quantity">Product quantity</label>  
+      <input type="text" id="quantity" name="quantity" value="{{ product.quantity }}"><br>
+    <label for="price">Product price</label>  
+      <input type="text" id="price" name="price" value="{{ product.price }}"><br>
+  </div>
     <input type="hidden" name="id" value="{{ product.id }}">
     <br>
-  <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>
