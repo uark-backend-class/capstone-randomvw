@@ -12,6 +12,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL);
 const Product = ProductModel(sequelize, Sequelize);
 const Category = ProductCategory(sequelize, Sequelize);
 
+Product.belongsTo(Category);
+
 sequelize.sync({force: true})
   .then( () => console.log('Tables are created!'))
   .then( () => {

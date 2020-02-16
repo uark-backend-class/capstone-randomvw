@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
     // },
     productName: Sequelize.STRING,
     description: Sequelize.STRING,
-    categoryId: Sequelize.INTEGER,
+    // categoryId: Sequelize.INTEGER,
     size: Sequelize.STRING,
     quantity: Sequelize.INTEGER,
     price: Sequelize.DECIMAL,
