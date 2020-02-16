@@ -9,3 +9,9 @@ exports.updateProduct = async (req, res) => {
   console.log(req.body);
   res.status(200).send;
 }
+
+exports.listProducts = async (req, res) => {
+  let products = await Product.findAll();
+
+  res.render('product-list', products);
+}
