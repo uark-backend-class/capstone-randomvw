@@ -7,11 +7,12 @@ exports.addProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   await Product.upsert(req.body);
   console.log(req.body);
-  res.status(200).send;
+  res.redirect('/products');
+  //  res.status(200).send;
 }
 
 exports.listProducts = async (req, res) => {
   let products = await Product.findAll();
-
-  res.render('product-list', products);
+  console.log(products);
+  res.render('product-list', {products});
 }
