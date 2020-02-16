@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const ProductModel = require('./models/product');
-const ProductType = require('./models/type');
+const ProductCategory = require('./models/category');
 
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
@@ -10,12 +10,12 @@ const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 
 const Product = ProductModel(sequelize, Sequelize);
-const Type = ProductType(sequelize, Sequelize);
+const Category = ProductCategory(sequelize, Sequelize);
 
 sequelize.sync({force: true})
   .then( () => console.log('Tables are created!'))
   .then( () => {
-    return Type.bulkCreate([
+    return Category.bulkCreate([
       { id: 0, name: 'donation' },
       { id: 1, name: 'hat' },
       { id: 2, name: 'shirt' },
@@ -27,4 +27,5 @@ sequelize.sync({force: true})
 
   module.exports = {
     Product,
+    Category,
   }

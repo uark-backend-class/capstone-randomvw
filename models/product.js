@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
   return sequelize.define('product', {
-    id: {
+    productId: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -14,6 +14,6 @@ module.exports = (sequelize, Sequelize) => {
     categoryId: Sequelize.INTEGER,
     size: Sequelize.STRING,
     quantity: Sequelize.INTEGER,
-    price: Sequelize.INTEGER,
+    price: Sequelize.DECIMAL,
   }, { freezeTableName: true });
 }
