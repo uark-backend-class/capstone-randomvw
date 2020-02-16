@@ -1,20 +1,31 @@
 <form action="/updateProduct" method="POST">
-  <div>
+  <div class="form-group">
     <label for="productName">Product name</label>
-      <input type="text" id="productName" name="productName" value="{{ product.productName }}"><br>
+      <input type="text" class="form-control" id="productName" name="productName" value="{{ product.productName }}" required>
     <label for="description">Product description</label>
-      <input type="text" id="description" name="description" value="{{ product.description }}"><br>
-    <label for="categoryId">Product categoryId</label>  
-      <input type="text" id="categoryId" name="categoryId" value="{{ product.categoryId }}"><br>
-      <p>0 = DONATION, 1 = HAT, 2 = SHIRT, 3 = SIGN, 4 = STICKER 5 = BUTTONS</p>
+      <input type="text" class="form-control" id="description" name="description" value="{{ product.description }}" required>
+ 
+    <label for="categoryId">Product Category</label>  
+      <select class="form-control" type="number" id="categoryId" name="categoryId" value="{{ product.categoryId }}">
+        <option value=0>Donation</option>
+        <option value=1>Hat</option>
+        <option value=2>Shirt</option>
+        <option value=3>Sign</option>
+        <option value=4>Sticker</option>
+        <option value=5>Button</option>
+        <option value=6>Other</option>
+      </select>
+  
+
     <label for="size">Product size</label>  
-      <input type="text" id="size" name="size" value="{{ product.size }}"><br>
+      <input type="text" class="form-control" id="size" name="size" value="{{ product.size }}">
     <label for="quantity">Product quantity</label>  
-      <input type="text" id="quantity" name="quantity" value="{{ product.quantity }}"><br>
+      <input type="text" class="form-control" id="quantity" name="quantity" value="{{ product.quantity }}">
     <label for="price">Product price</label>  
-      <input type="text" id="price" name="price" value="{{ product.price }}"><br>
+      <input type="text" class="form-control" id="price" name="price" value="{{ product.price }}">
   </div>
-    <input type="hidden" name="id" value="{{ product.id }}">
-    <br>
-    <button type="submit">Submit</button>
+    <input type="hidden" class="form-control" name="id" value="{{ product.id }}">
+    
+    <button type="submit" class="btn btn-success btn-sm">Submit</button>
 </form>
+

@@ -18,12 +18,13 @@ sequelize.sync({force: true})
   .then( () => console.log('Tables are created!'))
   .then( () => {
     return Category.bulkCreate([
-      { id: 0, name: 'donation' },
-      { id: 1, name: 'hat' },
-      { id: 2, name: 'shirt' },
-      { id: 3, name: 'sign' },
-      { id: 4, name: 'sticker' },
-      { id: 5, name: 'button' },
+      { id: 0, name: 'Donation' },
+      { id: 1, name: 'Hats' },
+      { id: 2, name: 'Shirts' },
+      { id: 3, name: 'Signs' },
+      { id: 4, name: 'Stickers' },
+      { id: 5, name: 'Buttons' },
+      { id: 6, name: 'Other' },
     ], { updateOnDuplicate: [ 'name' ]})
   });
 
