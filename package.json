@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn build:css && node ./bin/www",
-     "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
+    "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,5 @@
     "pg": "^7.18.1",
     "sequelize": "^5.21.3"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
