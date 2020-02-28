@@ -17,3 +17,7 @@ exports.listProducts = async (req, res) => {
   console.log(products);
   res.render('product-list', {products});
 }
+
+// exports.addToCart = async (req, res) => {
+//   await
+// }

@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    orderNum: Sequelize.STRING,
+    // orderNum: Sequelize.STRING,
   }, { freezeTableName: true });
   return Order;
 }
