@@ -2,17 +2,22 @@ const Sequelize = require("sequelize");
 const ProductModel = require("./models/product");
 const ProductCategory = require("./models/category");
 const OrderModel = require("./models/order");
+const UserModel = require("./models/user");
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 const Product = ProductModel(sequelize, Sequelize);
 const Category = ProductCategory(sequelize, Sequelize);
 const Order = OrderModel(sequelize, Sequelize);
+const User = UserModel(sequelize, Sequelize);
+
 
 Category.hasMany(Product);
 Product.belongsTo(Category);
 Product.belongsToMany(Order, { through: "ProductOrder" }); //! DIDN'T WORK ORIGINALLY BECAUSE I DIDN'T RETURN
 Order.belongsToMany(Product, { through: "ProductOrder" }); //! THE ORDER MODEL (./models/order.js)
+Order.hasMany(User);
+User.belongsTo(Order);
 
 sequelize
   .sync({ force: true })
@@ -35,5 +40,6 @@ sequelize
 module.exports = {
   Product,
   Category,
-  Order
+  Order,
+  User
 };
