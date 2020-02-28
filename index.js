@@ -12,6 +12,7 @@ const app = express();
 
 // app.use(express.urlencoded({ extended: true }));
 // app.use(routes);
+app.use(express.static('views/images')); 
 
 app.engine(".hbs", exphbs({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
