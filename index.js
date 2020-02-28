@@ -1,11 +1,13 @@
 require("dotenv").config();
 require("./db");
 
+const User = require('./db').User;
 const Product = require("./db").Product;
 const express = require("express");
 const exphbs = require("express-handlebars");
 const routes = require("./routes/index");
-const sessioni = require("express-session");
+// const passport = require('passport');
+const session = require("express-session");
 const app = express();
 
 // app.use(express.urlencoded({ extended: true }));
