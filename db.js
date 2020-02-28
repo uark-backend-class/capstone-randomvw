@@ -3,6 +3,7 @@ const ProductModel = require("./models/product");
 const ProductCategory = require("./models/category");
 const OrderModel = require("./models/order");
 const UserModel = require("./models/user");
+const RoleModel = require("./models/role");
 
 const sequelize = new Sequelize(process.env.DATABASE_URL);
 
@@ -10,6 +11,7 @@ const Product = ProductModel(sequelize, Sequelize);
 const Category = ProductCategory(sequelize, Sequelize);
 const Order = OrderModel(sequelize, Sequelize);
 const User = UserModel(sequelize, Sequelize);
+const Role = RoleModel(sequelize, Sequelize);
 
 
 Category.hasMany(Product);
@@ -18,6 +20,7 @@ Product.belongsToMany(Order, { through: "ProductOrder" }); //! DIDN'T WORK ORIGI
 Order.belongsToMany(Product, { through: "ProductOrder" }); //! THE ORDER MODEL (./models/order.js)
 Order.hasMany(User);
 User.belongsTo(Order);
+User.belongsTo(Role);
 
 sequelize
   .sync({ force: true })
@@ -35,11 +38,19 @@ sequelize
       ],
       { updateOnDuplicate: ["name"] }
     );
+  })
+  .then(() => {
+    return Role.bulkCreate([
+      { id: 0, name: 'Blocked' },
+      { id: 1, name: 'User' },
+      { id: 2, name: 'Admin' },
+    ], { updateOnDuplicate: [ 'name' ] })
   });
 
 module.exports = {
   Product,
   Category,
   Order,
-  User
+  User,
+  Role
 };
