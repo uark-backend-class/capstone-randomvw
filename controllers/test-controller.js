@@ -1,1 +1,1 @@
-exports.testPage = (req, res) => res.redirect('/products');
+exports.testPage = (req, res) => res.redirect("/products");

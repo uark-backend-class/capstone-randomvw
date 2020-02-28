@@ -1,9 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
-  return sequelize.define('category', {
-    id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
+  return sequelize.define(
+    "category",
+    {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true
+      },
+      name: Sequelize.STRING
     },
-    name: Sequelize.STRING,
-  }, { freezeTableName: true });
-}
+    { freezeTableName: true }
+  );
+};
