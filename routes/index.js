@@ -14,7 +14,11 @@ router.get("/cart", order.cart);
 //! WORKING ON LOGIN/AUTHENTICATION
 //! MUST ADD authController and adminController
 router.get('/register', authController.registerPage);
-//router.post('/register', authController.registerUser, authController.loginUser)
+router.post('/register', authController.registerUser, authController.loginUser)
+
+router.get('/login', authController.loginPage);
+router.post('/login', authController.loginUser);
+router.get('/logout', authController.logout);
 
 
 

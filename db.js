@@ -18,8 +18,9 @@ Category.hasMany(Product);
 Product.belongsTo(Category);
 Product.belongsToMany(Order, { through: "ProductOrder" }); //! DIDN'T WORK ORIGINALLY BECAUSE I DIDN'T RETURN
 Order.belongsToMany(Product, { through: "ProductOrder" }); //! THE ORDER MODEL (./models/order.js)
-Order.hasMany(User);
-User.belongsTo(Order);
+
+User.hasMany(Order);
+Order.belongsTo(User);
 User.belongsTo(Role);
 
 sequelize

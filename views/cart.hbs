@@ -1,4 +1,4 @@
-<h1>Product List</h1>
+<h1>Your Cart</h1>
 <br>
 <a class="btn btn-primary" href='/add'>Add a Product</a>
 <br>
@@ -15,8 +15,8 @@
   </tr>
 <div>
   <ul>
-  {{#each products}}
-  <form action="/addToCart" method="POST">
+  {{#each order.products}}
+  <form action="/removeFromCart" method="DELETE">
     <tr>
       <td>{{this.productName}}</td>
       <td>{{this.description}}</td>

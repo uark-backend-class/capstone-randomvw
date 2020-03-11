@@ -18,14 +18,25 @@
   {{#each products}}
   <form action="/addToCart" method="POST">
     <tr>
-      <td>{{this.productName}}</td>
+      <td value="{{this.productName}}">{{this.productName}}</td>
+        <input type="hidden" class="form-control" id="productName" name="productName" value="{{ this.productName }}" required>
+      
       <td>{{this.description}}</td>
+        <input type="hidden" class="form-control" id="description" name="description" value="{{ this.description }}" required>
+      
       <td>{{this.category.name}}</td>
+        <input type="hidden" class="form-control" id="categoryId" name="categoryId" value="{{ this.categoryId }}" required>
+      
       <td>{{this.size}}</td>
+        <input type="hidden" class="form-control" id="size" name="size" value="{{ this.size }}" required>
+      
       <td>{{this.quantity}}</td>
+        <input type="hidden" class="form-control" id="quantity" name="quantity" value="{{ this.quantity }}" required>
+      
       <td>${{this.price}}</td>
-      <td><button type="submit" class="btn btn-success float-right" 
-        value="{{ this.product.ProductOrder.orderId }}">Add to Cart</button></td>
+        <input type="hidden" class="form-control" id="price" name="price" value="{{ this.price }}" required>
+      
+      <td><button type="submit" class="btn btn-success float-right">Add to Cart</button></td>
     </tr>
   </form>
   {{/each}}

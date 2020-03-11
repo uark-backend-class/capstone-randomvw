@@ -8,8 +8,13 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
-      }
-      // orderNum: Sequelize.STRING,
+      },
+      productName: Sequelize.STRING,
+      description: Sequelize.STRING,
+      categoryId: Sequelize.INTEGER,
+      size: Sequelize.STRING,
+      quantity: Sequelize.INTEGER,
+      price: Sequelize.DECIMAL
     },
     { freezeTableName: true }
   );
