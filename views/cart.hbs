@@ -15,7 +15,7 @@
   </tr>
 <div>
   <ul>
-  {{#each order.products}}
+  {{#each order}}
   <form action="/removeFromCart" method="DELETE">
     <tr>
       <td>{{this.productName}}</td>
