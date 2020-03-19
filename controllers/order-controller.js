@@ -19,3 +19,9 @@ exports.cart = async (req, res) => {
   // console.log(order);
   // res.render("cart", { order });
 };
+
+exports.sum = () => Order.findAll({
+  attributes: ['userId', [sequelize.fn('sum', sequelize.col('price')), 'total']],
+  group: ['Order.userId'],
+  raw: true,
+});
