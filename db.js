@@ -24,7 +24,7 @@ Order.belongsTo(User);
 User.belongsTo(Role);
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => console.log("Tables are created!"))
   .then(() => {
     return Category.bulkCreate(
